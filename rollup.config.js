@@ -35,6 +35,9 @@ export default {
   input: 'src/main.ts',
   output: {
     sourcemap: !production,
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/calisthenics/'
+      : '/',
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js'
